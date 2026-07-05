@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: oogiri-app
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MIN_PLAYERS_TO_START
+        value: 2
+      # Supabase / PostgreSQLを使う場合はRenderの画面でDATABASE_URLをSecretとして追加してください。
